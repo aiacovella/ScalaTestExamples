@@ -83,6 +83,7 @@
         </executions>
         <configuration>
           <scalaVersion>${scala.version}</scalaVersion>
+          <build.plugins.plugin.version></build.plugins.plugin.version>
         </configuration>
       </plugin>
       <plugin>
