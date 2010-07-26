@@ -42,19 +42,6 @@
       <artifactId>junit-dep</artifactId>
       <version>4.8.1</version>
     </dependency>
-      <!--<dependency>-->
-          <!--<groupId>org.testng</groupId>-->
-          <!--<artifactId>testng</artifactId>-->
-          <!--<classifier>jdk15</classifier>-->
-          <!--<version>5.8</version>-->
-          <!--<exclusions>-->
-              <!--<exclusion>-->
-                  <!--<groupId>junit</groupId>-->
-                  <!--<artifactId>junit</artifactId>-->
-              <!--</exclusion>-->
-          <!--</exclusions>-->
-      <!--</dependency>-->
-
   </dependencies>
 
   <build>
@@ -83,6 +70,7 @@
         </executions>
         <configuration>
           <scalaVersion>${scala.version}</scalaVersion>
+          <build.plugins.plugin.version></build.plugins.plugin.version>
         </configuration>
       </plugin>
       <plugin>

@@ -1,6 +1,6 @@
 package com.foo
 
-import org.junit.{Assert, Test}
+import org.junit.Test
 
 class FooTest{
 
@@ -10,6 +10,6 @@ class FooTest{
   }
 
   object Foo{
-    def methodThatThrowsException() = throw new NullPointerException
+    def methodThatThrowsException() = throw new IllegalArgumentException
   }
 }
