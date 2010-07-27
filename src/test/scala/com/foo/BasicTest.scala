@@ -4,18 +4,18 @@ import org.junit.{Before, Test}
 import org.junit.Assert.assertTrue
 
 class BasicTest{
-  var bankBalance:BankBalance = _
+  var bankAccount:BankAccount = _
 
   @Before
-  def setup() = {bankBalance = new BankBalance(100)}
+  def setup() = {bankAccount = new BankAccount(100)}
 
   @Test
   def addsCorrectly {
-    assertTrue(bankBalance.add(150) == 250)
+    assertTrue(bankAccount.add(150) == 250)
   }
 }
 
-class BankBalance(private var balance:Double){
+class BankAccount(private var balance:Double){
   def add(amt:Double):Double = {
     balance + amt
   }
