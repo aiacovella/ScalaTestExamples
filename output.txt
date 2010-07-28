@@ -15,6 +15,9 @@
 [INFO] ------------------------------------------------------------------------
 Downloading: http://scala-tools.org/repo-releases/org/apache/maven/plugins/maven-eclipse-plugin/maven-metadata.xml
 [INFO] 
+[INFO] --- maven-clean-plugin:2.3:clean (default-clean) @ scalatesting ---
+[INFO] Deleting file set: /data/projects/scalatesting/target (included: [**], excluded: [])
+[INFO] 
 [INFO] --- maven-resources-plugin:2.4.1:resources (default-resources) @ scalatesting ---
 [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 [INFO] skip non existing resourceDirectory /data/projects/scalatesting/src/main/resources
@@ -24,7 +27,9 @@ Downloading: http://scala-tools.org/repo-releases/org/apache/maven/plugins/maven
 [INFO] 
 [INFO] --- maven-scala-plugin:2.14.1:compile (default) @ scalatesting ---
 [INFO] Checking for multiple versions of scala
-[INFO] Nothing to compile - all classes are up to date
+[INFO] includes = [**/*.scala,**/*.java,]
+[INFO] excludes = []
+[WARNING] No source files found.
 [INFO] 
 [INFO] --- maven-resources-plugin:2.4.1:testResources (default-testResources) @ scalatesting ---
 [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
@@ -35,7 +40,12 @@ Downloading: http://scala-tools.org/repo-releases/org/apache/maven/plugins/maven
 [INFO] 
 [INFO] --- maven-scala-plugin:2.14.1:testCompile (default) @ scalatesting ---
 [INFO] Checking for multiple versions of scala
-[INFO] Nothing to compile - all classes are up to date
+[INFO] includes = [**/*.scala,**/*.java,]
+[INFO] excludes = []
+[INFO] /data/projects/scalatesting/src/test/scala:-1: info: compiling
+[INFO] Compiling 2 source files to /data/projects/scalatesting/target/test-classes at 1280144704844
+[INFO] prepare-compile in 0 s
+[INFO] compile in 2 s
 [INFO] 
 [INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ scalatesting ---
 [INFO] Surefire report directory: /data/projects/scalatesting/target/surefire-reports
@@ -43,38 +53,25 @@ Downloading: http://scala-tools.org/repo-releases/org/apache/maven/plugins/maven
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
-Running com.foo.TestRunner
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.07 sec <<< FAILURE!
-Running com.foo.TestUtils
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE!
+Running com.foo.BasicTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec
 Running com.foo.FooTest
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec <<< FAILURE!
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
 
 Results :
 
-Failed tests: 
-  warning(junit.framework.TestSuite$1)
-  shouldNotThrowException(com.foo.FooTest)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
 
-Tests in error: 
-  initializationError(com.foo.TestRunner)
-
-Tests run: 4, Failures: 2, Errors: 1, Skipped: 0
-
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ scalatesting ---
+[INFO] Building jar: /data/projects/scalatesting/target/scalatesting-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.3:install (default-install) @ scalatesting ---
+[INFO] Installing /data/projects/scalatesting/target/scalatesting-1.0-SNAPSHOT.jar to /home/al/.m2/repository/com/foo/scalatesting/1.0-SNAPSHOT/scalatesting-1.0-SNAPSHOT.jar
 [INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
+[INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 4.081s
-[INFO] Finished at: Fri Jul 23 10:03:43 GMT-05:00 2010
-[INFO] Final Memory: 3M/504M
+[INFO] Total time: 6.321s
+[INFO] Finished at: Mon Jul 26 06:45:08 GMT-05:00 2010
+[INFO] Final Memory: 4M/504M
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.4.3:test (default-test) on project scalatesting: There are test failures.
-
-Please refer to /data/projects/scalatesting/target/surefire-reports for the individual test results.
--> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

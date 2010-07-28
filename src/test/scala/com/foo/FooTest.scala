@@ -1,10 +1,15 @@
 package com.foo
 
-import org.junit.{Assert, Test}
+import org.junit.Test
 
 class FooTest{
 
-  @Test
-  def something {
+  @Test { val expected = classOf[ IllegalArgumentException] }
+  def shouldThrowException {
+      Foo.methodThatThrowsException
+  }
+
+  object Foo{
+    def methodThatThrowsException() = throw new IllegalArgumentException
   }
 }
