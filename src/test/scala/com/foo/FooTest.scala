@@ -8,8 +8,7 @@ class FooTest{
   def shouldThrowException {
       Foo.methodThatThrowsException
   }
-
-  object Foo{
+ object Foo{
     def methodThatThrowsException() = throw new IllegalArgumentException
   }
 }
