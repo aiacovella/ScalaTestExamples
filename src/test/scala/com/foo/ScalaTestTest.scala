@@ -1,20 +1,19 @@
 package com.foo
 
+import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.matchers._
 import org.junit.Test
-import org.hamcrest.Matchers._
-import org.hamcrest.MatcherAssert._
 
-class ScalaTestTest{
+class ScalaTestTest extends ShouldMatchers {
   val company = Company
 
   @Test
   def addsCorrectly {
 
-    val jSmith = Person("John", "Smith", 1)
+    val jSmith = Person("John", "Smith", 1L)
     company.hire(jSmith)
 
-    assertThat(company.employeCount, is(1))
-    assertThat(company.employees(1), is(jSmith))
-
+    company.employeeCount should be (1)
+    company.employees should contain value (jSmith)
   }
 }

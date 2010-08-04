@@ -1,22 +1,19 @@
 package com.foo
-
-import org.junit.{Before, Test}
-import org.junit.Assert.assertTrue
+import org.junit.Test
+import scala.collection.mutable.Map
 
 class BasicTest{
-  var bankAccount:BankAccount = _
-
-  @Before
-  def setup() = {bankAccount = new BankAccount(100)}
+  val company = Company
 
   @Test
   def addsCorrectly {
-    assertTrue(bankAccount.add(150) == 250)
+
+    val jSmith = Person("John", "Smith", 1)
+    company.hire(jSmith)
+
+    assert(company.employeeCount == 1)
+    assert(company.employees(1) == jSmith)
   }
 }
 
-class BankAccount(private var balance:Double){
-  def add(amt:Double):Double = {
-    balance + amt
-  }
-}
+
