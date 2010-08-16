@@ -7,15 +7,20 @@
   <inceptionYear>2010</inceptionYear>
 
   <properties>
-    <scala.version>2.8.0</scala.version>
+    <scala.version>2.7.7</scala.version>
     <reporting.plugins.plugin.version>2.1.2</reporting.plugins.plugin.version>
   </properties>
 
   <repositories>
     <repository>
       <id>scala-tools.org</id>
-      <name>Scala-Tools Maven2 Repository</name>
+      <name>Scala-tools Maven2 Repository</name>
       <url>http://scala-tools.org/repo-releases</url>
+    </repository>
+    <repository>
+        <id>jline</id>
+        <name>JLine Project Repository</name>
+        <url>http://jline.sourceforge.net/m2repo</url>
     </repository>
   </repositories>
 
