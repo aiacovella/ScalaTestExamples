@@ -1,10 +1,10 @@
 package com.foo
 
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.matchers.ShouldMatchers._
 import org.scalatest.matchers._
 import org.junit.Test
 
-class ScalaTestTest extends ShouldMatchers {
+class ScalaTestTest  {
   val company = Company
 
   @Test
